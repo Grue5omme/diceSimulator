@@ -1,5 +1,5 @@
 @ incArray.s
-@ This sub-function takes as input the address of the array at the first index, the
+@ This function takes as input the address of the array at the first index, the
  @ array size, and the number to be considered. It then matches the number being considered
  @ with the appropriate array index and increments the value stored at that index.
 
