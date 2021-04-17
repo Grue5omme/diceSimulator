@@ -1,5 +1,5 @@
 # diceSimulator
-Master File for the diceSimulator Assembly Language program.
+Master File for the diceSimulator Assembly Language program. In terms of its probability distribution, this program does not actually simulate rolling two six-sided dice. It merely generates a number between 2 and 12.
 
 diceSimulator Files:
 - Main: Initializes the array and houses loops that calls several subfunctions (described below)
