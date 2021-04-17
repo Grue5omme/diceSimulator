@@ -1,4 +1,7 @@
 @ Main.s
+@ This program generates a random number between 2 and 12, iterates a given number of times (25),
+ @ and keeps track of how many times each number is rolled using an array. It then prints a 
+ @ horizontal histogram showing the empirical distribution of each number.
 
 .cpu cortex-a53
 .fpu neon-fp-armv8
