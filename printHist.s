@@ -1,4 +1,6 @@
 @ printHist.s
+@ This function prints a horizontal histogram for the empirical distribution of
+ @ numbers generated.
 
 .cpu cortex-a53
 .fpu neon-fp-armv8

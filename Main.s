@@ -1,4 +1,7 @@
 @ Main.s
+@ This program generates a random number between 2 and 12, iterates a given number of times (25),
+ @ and keeps track of how many times each number is rolled using an array. It then prints a 
+ @ horizontal histogram showing the empirical distribution of each number.
 
 .cpu cortex-a53
 .fpu neon-fp-armv8
@@ -41,15 +44,14 @@ loop:
 outloop1:				@ Exit for the loop
 
 	mov	r9, #0			@ Moves #0 into r9
+	bl	time			@ Gets time from clock
+	bl	srand			@ Sets seed for srand
 
 loop2:
 	cmp	r9, #25			@ Compares r9 with #25
 	bge	outloop2		@ If it is equal to or greater than 25, exit loop
 	
 	bl 	randomNumber		@ Branches to random number generator function
-	mov	r1, #11	
-	bl	modulo			@ Calls modulo function
-	add	r2, r0, #2		@ Adds #2 to number returned by modulo and stores it in r0
 	ldr	r0, [fp, #-8]		@ Loads address of first array index into r0
 	ldr	r1, [fp, #-12]		@ Loads array size into r1
 

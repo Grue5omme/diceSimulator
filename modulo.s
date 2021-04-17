@@ -1,4 +1,5 @@
-@ Modulo.s
+@ modulo.s
+@ This function computes the modulo of the two numbers passed to it.
 
 .cpu cortex-a53
 .fpu neon-fp-armv8
