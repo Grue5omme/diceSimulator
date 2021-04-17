@@ -1,4 +1,6 @@
 @ randomNumber.s
+@ This function generates a random number, modulos it with 11, adds 2 to it, and 
+ @ then returns it to the calling program.
 
 .cpu cortex-a53
 .fpu neon-fp-armv8
