@@ -1,5 +1,5 @@
 @ printHist.s
-@ This program prints a horizontal histogram for the empirical distribution of
+@ This function prints a horizontal histogram for the empirical distribution of
  @ numbers generated.
 
 .cpu cortex-a53
