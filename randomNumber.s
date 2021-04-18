@@ -22,7 +22,7 @@ randomNumber:
 	bl	rand			@ Generates random number
 	mov	r1, #11			@ Moves #11 into r1
 	bl	modulo			@ Calls modulo function
-	add	r2, r0, #2		@ Adds #2 to number returned by modulo and stores it in r0
+	add	r2, r0, #2		@ Adds #2 to number returned by modulo and moves it into r2
 
 	sub 	sp, fp, #4		@ Moves down one memory location from fp and stores it in sp
 	pop 	{fp, pc}		@ Pops fp and pc from the stack
