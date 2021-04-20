@@ -1,6 +1,6 @@
 @ rollDie.s
-@ This function generates a random number, modulos it with 6, adds 1 to it, thus
- @ generating a random number between 1 and 6, and then returns it to the calling function.
+@ This function generates a random number, modulos it with 6, adds 1 to it.
+ @ The result is a random number between 1 and 6, which it then returns to the calling function.
 
 .cpu cortex-a53
 .fpu neon-fp-armv8
