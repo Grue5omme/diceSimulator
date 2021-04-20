@@ -10,3 +10,6 @@ This program was written first as practice for, and then modified for submission
 - `modulo.s`: Performs a modulo of two arguments passed to it and returns the result.
 - `printTable.s`: Prints a table showing the empirical distribution of the dice rolls.
 - `rollDie.s`: Generates a random number between 1 and 6 and returns it.
+
+The output of this program, as submitted for the exam, can be seen below:
+![Midterm Output](https://user-images.githubusercontent.com/82683346/115346193-b9be7380-a164-11eb-93f9-2a0d876d4f12.png)
