@@ -6,8 +6,8 @@
 .fpu neon-fp-armv8
 
 .data
-	header:	 .asciz "Sum of the dice	Number of Occurrences\n"
-	output1: .asciz	"     %d			  %d\n"
+	header:	 .asciz "Sum of the dice      Number of Occurrences\n"
+	output1: .asciz	"      %d              	      %d\n"
 	newline: .asciz "\n"
 
 .text
