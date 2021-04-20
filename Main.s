@@ -1,7 +1,7 @@
 @ Main.s
 @ This program generates a random number between 1 and 6 twice and adds them together.
- @ It does this 1000 times and keeps track of how many times each number (2-12) is rolled 
- @ using an array. It then prints the empirical distribution of each number rolled.
+ @ It does this 1000 times and keeps track of how many times each sum (2-12) is rolled 
+ @ using an array. It then prints the empirical distribution of each sum rolled.
 
 .cpu cortex-a53
 .fpu neon-fp-armv8
@@ -28,29 +28,28 @@ main:
 	ldr	r1, [fp, #-12]		@ Loads size of array into r1
 	ldr	r0, [fp, #-8]		@ Loads the address of the first array index into r0
 
-
 	bl	initArray		@ Branches to initArray function
 
-	mov	r9, #0			@ Moves #0 into r9
+	mov	r9, #0			@ Moves #0 into r9. This is the counter for our primary loop
 	mov	r0, #0			@ Moves 0 into r0 for the time and srand calls
 	bl	time			@ Gets time from clock
 	bl	srand			@ Sets seed for srand
 
 loop1:
 	cmp	r9, #1000		@ Compares r9 with 1000
-	bge	outloop1		@ If it is equal to or greater than 25, exit loop
+	bge	outloop1		@ If it is greater than or equal to 1000, exit loop
 	
 	bl 	rollDie			@ Branches to rollDie function
 	mov	r4, r0			@ Moves number returned by rollDie into r4
 	bl	rollDie			@ Branches to rollDie function
-	add	r4, r4, r0		@ Adds that number to the number stored in r4
+	add	r4, r4, r0		@ Adds the number returned by rollDie function to the number stored in r4
 	ldr	r0, [fp, #-8]		@ Loads address of first array index into r0
 	ldr	r1, [fp, #-12]		@ Loads array size into r1
 	mov	r2, r4			@ Moves the value in r4 into r2
 
 	bl	incArray		@ Calls the function to increment the correct array index
 
-	add	r9, r9, #1		@ Increments r9
+	add	r9, r9, #1		@ Increments r9 by 1
 	bl	loop1			@ Branches back to the start of the loop
 
 outloop1:
