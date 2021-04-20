@@ -1,4 +1,4 @@
-@ printHist.s
+@ printArray.s
 @ This function prints a horizontal histogram for the empirical distribution of
  @ numbers generated.
 
@@ -12,11 +12,11 @@
 
 .text
 .align 2
-.global printHist
+.global printArray
 .syntax unified
-.type printHist, %function
+.type printArray, %function
 
-printHist:
+printArray:
 	push	{fp, lr}		@ Pushes fp and lr onto the stack
    	add 	fp, sp, #4		@ Adds 4 to sp and stores it in fp
 
@@ -34,9 +34,6 @@ loop1:
 	mov	r2, r5			@ Moves r5 into r2
 	mov	r1, r8			@ Moves the value in r8 into r1
 	bl	printf			@ Branches to printf
-
-	mov	r6, #0			@ Moves #0 into r6
-
 
 	add	r4, r4, #4		@ Adds #4 to r4, moving the memory location up one
 	ldr	r5, [r4]		@ Move the memory location pointer up one and store its value in r4
