@@ -36,7 +36,7 @@ loop:
 	bge	outloop1		@ If it is equal to or greater than 11, exit loop
 
 	mov	r5, r4, LSL #2		@ Multiplies r4 by 4 and stores it in r5
-	str	r0, [sp, r5]		@ Stores #0 into the stack pointer array[r4]
+	str	r0, [sp, r5]		@ Stores #0 into the stack pointer array[r5]
 	add	r4, r4, #1		@ Increments r4 by 1
 	bl	loop			@ Branches back to the start of the loop
 
