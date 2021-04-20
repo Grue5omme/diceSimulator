@@ -56,7 +56,7 @@ outloop1:
 
 	ldr	r0, [fp, #-8]		@ Loads address of first array index into r0
 	ldr	r1, [fp, #-12]		@ Loads array size into r1
-	bl	printArray		@ Calls the function to print the histogram
+	bl	printTable		@ Calls the function to print the histogram
 
 	sub 	sp, fp, #4		@ Moves down one memory location from fp and stores it in sp
 	pop 	{fp, pc}		@ Pops fp and pc from the stack
