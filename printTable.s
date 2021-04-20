@@ -1,4 +1,4 @@
-@ printArray.s
+@ printTable.s
 @ This function prints the total number of times each value (2-12) was rolled.
 
 .cpu cortex-a53
@@ -11,11 +11,11 @@
 
 .text
 .align 2
-.global printArray
+.global printTable
 .syntax unified
-.type printArray, %function
+.type printTable, %function
 
-printArray:
+printTable:
 	push	{fp, lr}		@ Pushes fp and lr onto the stack
    	add 	fp, sp, #4		@ Adds 4 to sp and stores it in fp
 
