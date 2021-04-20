@@ -1,6 +1,6 @@
 @ incArray.s
 @ This function takes as input the address of the array at the first index, the
- @ array size, and the number to be considered. It then matches the number being considered
+ @ array size, and the number to be considered (2-12). It then matches the number being considered
  @ with the appropriate array index and increments the value stored at that index.
 
 .cpu cortex-a53
