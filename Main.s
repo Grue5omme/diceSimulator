@@ -31,6 +31,7 @@ main:
 	bl	initArray		@ Branches to initArray function
 
 	mov	r9, #0			@ Moves #0 into r9
+	mov	r0, #0			@ Moves 0 into r0 for the time and srand calls
 	bl	time			@ Gets time from clock
 	bl	srand			@ Sets seed for srand
 
@@ -49,13 +50,13 @@ loop1:
 	bl	incArray		@ Calls the function to increment the correct array index
 
 	add	r9, r9, #1		@ Increments r9
-	bl	loop2			@ Branches back to the start of the loop
+	bl	loop1			@ Branches back to the start of the loop
 
 outloop1:
 
 	ldr	r0, [fp, #-8]		@ Loads address of first array index into r0
 	ldr	r1, [fp, #-12]		@ Loads array size into r1
-	bl	printHist		@ Calls the function to print the histogram
+	bl	printArray		@ Calls the function to print the histogram
 
 	sub 	sp, fp, #4		@ Moves down one memory location from fp and stores it in sp
 	pop 	{fp, pc}		@ Pops fp and pc from the stack
