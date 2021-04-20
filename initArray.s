@@ -1,5 +1,6 @@
 @ initArray.s
-@ This function sets the initial array values to 0
+@ This function takes as input the address of the first array index and the size
+ @ of the array and then sets the initial array value at each index to 0
 
 .cpu cortex-a53
 .fpu neon-fp-armv8
