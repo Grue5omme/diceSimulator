@@ -1,5 +1,7 @@
 @ modulo.s
-@ This function computes the modulo of the two numbers passed to it.
+@ This function takes as input the number that is having modulo performed on it and
+ @ the number to take the modulo by. It computes the modulo of these two numbers and
+ @ returns it to the calling function.
 
 .cpu cortex-a53
 .fpu neon-fp-armv8
