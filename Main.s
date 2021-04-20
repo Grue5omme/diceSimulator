@@ -26,6 +26,7 @@ main:
 	mov	r0, #11			@ Moves #11 into r0
 	str	r0, [fp, #-12]		@ Stores array size into second available memory address	
 	ldr	r1, [fp, #-12]		@ Loads size of array into r1
+	ldr	r0, [fp, #-8]		@ Loads the address of the first array index into r0
 
 
 	bl	initArray		@ Branches to initArray function
