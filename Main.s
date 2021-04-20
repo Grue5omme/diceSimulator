@@ -28,27 +28,15 @@ main:
 	ldr	r1, [fp, #-12]		@ Loads size of array into r1
 
 
-	mov 	r4, #0			@ Stores #0 into r4
-	mov 	r0, #0			@ Stores #0 into r0
-
-loop:
-	cmp	r4, #11			@ Compares r4 with #11
-	bge	outloop1		@ If it is equal to or greater than 11, exit loop
-
-	mov	r5, r4, LSL #2		@ Multiplies r4 by 4 and stores it in r5
-	str	r0, [sp, r5]		@ Stores #0 into the stack pointer array[r5]
-	add	r4, r4, #1		@ Increments r4 by 1
-	bl	loop			@ Branches back to the start of the loop
-
-outloop1:				@ Exit for the loop
+	bl	initArray		@ Branches to initArray function
 
 	mov	r9, #0			@ Moves #0 into r9
 	bl	time			@ Gets time from clock
 	bl	srand			@ Sets seed for srand
 
-loop2:
+loop1:
 	cmp	r9, #25			@ Compares r9 with #25
-	bge	outloop2		@ If it is equal to or greater than 25, exit loop
+	bge	outloop1		@ If it is equal to or greater than 25, exit loop
 	
 	bl 	randomNumber		@ Branches to random number generator function
 	ldr	r0, [fp, #-8]		@ Loads address of first array index into r0
@@ -59,7 +47,7 @@ loop2:
 	add	r9, r9, #1		@ Increments r9
 	bl	loop2			@ Branches back to the start of the loop
 
-outloop2:
+outloop1:
 
 	ldr	r0, [fp, #-8]		@ Loads address of first array index into r0
 	ldr	r1, [fp, #-12]		@ Loads array size into r1
