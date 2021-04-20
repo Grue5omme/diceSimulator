@@ -1,6 +1,5 @@
 @ printArray.s
-@ This function prints a horizontal histogram for the empirical distribution of
- @ numbers generated.
+@ This function prints the total number of times each value (2-12) was rolled.
 
 .cpu cortex-a53
 .fpu neon-fp-armv8
@@ -25,14 +24,14 @@ printArray:
 
 	mov	r8, #2			@ Moves #2 into r8
 	ldr	r0, =header		@ Moves header text into r0
-	bl	printf
+	bl	printf			@ Branches to the printf function
 
 loop1:
 	cmp	r8, #13			@ Compares r8 to #13
 	bge	outloop1		@ If it is greater than or equal to, exit loop
 	ldr	r0, =output1		@ Stores output string into r0
-	mov	r2, r5			@ Moves r5 into r2
 	mov	r1, r8			@ Moves the value in r8 into r1
+	mov	r2, r5			@ Moves r5 into r2
 	bl	printf			@ Branches to printf
 
 	add	r4, r4, #4		@ Adds #4 to r4, moving the memory location up one
