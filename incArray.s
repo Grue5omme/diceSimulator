@@ -18,12 +18,12 @@ incArray:
 	push	{fp, lr}		@ Pushes fp and lr onto the stack
    	add 	fp, sp, #4		@ Adds 4 to sp and stores it in fp
 
-	sub	r3, r2, #2
-	mov	r3, r3, LSL #2
+	sub	r2, r2, #2
+	mov	r2, r2, LSL #2
 	
-	ldr	r4, [r0, r3]		@ Loads the value in array[0] into r4
+	ldr	r4, [r0, r2]		@ Loads the value in array[0] into r4
 	add	r4, r4, #1		@ Increments the value of r4 by 1
-	str	r4, [r0, r3]		@ Stores the value in r4 into array[0]
+	str	r4, [r0, r2]		@ Stores the value in r4 into array[0]
 
 	sub 	sp, fp, #4		@ Moves down one memory location from fp and stores it in sp
 	pop 	{fp, pc}		@ Pops fp and pc from the stack
